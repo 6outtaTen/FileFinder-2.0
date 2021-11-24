@@ -1,0 +1,170 @@
+﻿<Window x:Class="FileFinder.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FileFinder"
+        ResizeMode="NoResize"
+        mc:Ignorable="d"
+        Title="File Finder" Height="500" Width="800"
+        Background="#202020"
+        >
+
+
+    <Grid Margin="0,0,0,-31">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="450"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.Background>
+            <ImageBrush ImageSource="background.jpeg"/>
+        </Grid.Background>
+
+        <TextBlock HorizontalAlignment="Left" Margin="208,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="348" RenderTransformOrigin="0.555,1.62" FontFamily="Fonts/#Dosis/" Foreground="White"><Run Text="                            "/><Run FontSize="36" Text="FILE FINDER"/></TextBlock>
+        <Image Source="gear.png" Height="32" Width="86" RenderTransformOrigin="-0.014,0.429" Margin="21,18,687,400"/>
+        <Button Name="Settings" FontFamily="Fonts/#Dosis/" HorizontalAlignment="Left" Height="67" VerticalAlignment="Top" Width="162" FontWeight="Medium" FontSize="14" Click="Settings_Click">
+            <StackPanel>
+                <Image Source="gear.png" Height="32" Width="86" RenderTransformOrigin="-0.014,0.429"/>
+            </StackPanel>
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="White"/>
+                    <Setter Property="TextElement.FontFamily" Value="Fonts\#Dosis"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FFA8A7A4"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+
+
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="12"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+
+        <Button Name="About" FontFamily="Fonts/#Dosis/" HorizontalAlignment="Right" Height="67" FontWeight="Medium" FontSize="14" VerticalAlignment="Top" Width="162" BorderBrush="Black" RenderTransformOrigin="0.5,0.5" Click="About_Click">
+            <StackPanel>
+                <Image Source="question-mark.png" Height="41" Width="104" RenderTransformOrigin="-0.014,0.429"/>
+            </StackPanel>
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="White"/>
+                    <Setter Property="TextElement.FontFamily" Value="Fonts\#Dosis"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FFA8A7A4"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="12"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Label Content="Select search mode" HorizontalAlignment="Left" Margin="10,103,0,0" VerticalAlignment="Top" Foreground="White" Height="46" Width="229" FontSize="22" FontFamily="Fonts/#Dosis/"/>
+        <RadioButton Content="My file/folder starts with... " FontFamily="Fonts/#Dosis/" GroupName="mode" HorizontalAlignment="Left" Margin="21,154,0,0" VerticalAlignment="Top" Width="171" Foreground="White" Height="26" Checked="Starts_Mode_Checked" FontSize="13"/>
+        <RadioButton Content="My file/folder ends with... " FontFamily="Fonts/#Dosis/"  GroupName="mode" HorizontalAlignment="Left" Margin="21,180,0,0" VerticalAlignment="Top" Width="171" Foreground="White" Height="26" Checked="Ends_Mode_Checked" FontSize="13"/>
+        <RadioButton Content="My file/folder contains... " FontFamily="Fonts/#Dosis/" GroupName="mode" HorizontalAlignment="Left" Margin="21,206,0,0" VerticalAlignment="Top" Width="171" Foreground="White" Height="26" Checked="Contains_Mode_Checked" FontSize="13"/>
+        <RadioButton Content="Look specificly for... " FontFamily="Fonts/#Dosis/" GroupName="mode" HorizontalAlignment="Left" Margin="21,232,0,0" VerticalAlignment="Top" Width="171" Foreground="White" Height="26" Checked="Specific_Mode_Checked" FontSize="13"/>
+        <Label Content="Select search path" FontFamily="Fonts/#Dosis/" HorizontalAlignment="Left" Margin="294,103,0,0" VerticalAlignment="Top" Foreground="White" Height="46" Width="218" FontSize="22"/>
+        <Button Content="Select" FontFamily="Fonts/#Dosis/" FontWeight="Medium" FontSize="14" HorizontalAlignment="Left" Height="41" VerticalAlignment="Top" Width="138" Margin="321,155,0,0" Click="Select_Btn_Clicked" RenderTransformOrigin="0.428,0.561">
+
+
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="12"/>
+                </Style>
+            </Button.Resources>
+
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="White"/>
+                    <Setter Property="TextElement.FontFamily" Value="Fonts\#Dosis"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FFA8A7A4"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+
+
+        </Button>
+        <Label Content="Enter search parameters" FontFamily="Fonts/#Dosis/" HorizontalAlignment="Left" Margin="534,103,0,0" VerticalAlignment="Top" Foreground="White" Height="46" Width="248" FontSize="22"/>
+        <TextBox Name ="search_param_input" FontFamily="Fonts/#Dosis/" HorizontalAlignment="Left" Height="20" Margin="544,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="229" TextChanged="Data_Was_Entered"/>
+        <Button Content="Search!" FontFamily="Fonts/#Dosis/" FontWeight="Medium" HorizontalAlignment="Left" Height="83" VerticalAlignment="Top" Width="436" Margin="181,357,0,0" RenderTransformOrigin="0.51,0.678" FontSize="28" Click="Search_Btn_Clicked">
+
+
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="12"/>
+                </Style>
+            </Button.Resources>
+
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="White"/>
+                    <Setter Property="TextElement.FontFamily" Value="Fonts\#Dosis"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FFA8A7A4"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+
+
+        </Button>
+        <Frame Name="frame" HorizontalAlignment="Left" Height="450" Margin="112,26,0,0" VerticalAlignment="Top" Width="556" NavigationUIVisibility="Hidden" Navigated="Frame_Navigated"/>
+
+    </Grid>
+</Window>

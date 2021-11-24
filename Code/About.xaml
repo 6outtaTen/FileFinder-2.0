@@ -1,0 +1,61 @@
+﻿<Page x:Class="FileFinder.About"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FileFinder"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="556"
+      Background="#202020"
+      Title="About">
+
+    <Grid Margin="0,0,0,-31">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="450"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.Background>
+            <ImageBrush ImageSource="background.jpeg"/>
+        </Grid.Background>
+
+        <Image Source="question-mark.png" RenderTransformOrigin="0.595,0.5" Margin="-70,0,410,387" />
+        <Image Source="question-mark.png" RenderTransformOrigin="0.595,0.5" Margin="412,0,-72,387" />
+
+        <TextBlock HorizontalAlignment="Center" Margin="134,10,120,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="302" RenderTransformOrigin="0.555,1.62" FontFamily="Fonts/#Dosis/" Foreground="White"><Run Text="                            "/><Run FontSize="36" Text="About"/></TextBlock>
+        <Button Content="Close" FontFamily="Fonts/#Dosis/" FontWeight="Medium" HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="197" Margin="173,360,0,0" RenderTransformOrigin="0.51,0.678" FontSize="28" Click="Go_Back">
+
+
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="12"/>
+                </Style>
+            </Button.Resources>
+
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="White"/>
+                    <Setter Property="TextElement.FontFamily" Value="Fonts\#Dosis"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FFA8A7A4"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+
+
+        </Button>
+        <TextBlock Foreground="White" HorizontalAlignment="Left" Margin="65,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="12.5" FontFamily="Fonts/#Dosis/" Height="288" Width="439"><Run Text="The app is meant to help find files and directiories that you can't find."/><LineBreak/><Run Text="The app has 4 search modes:"/><LineBreak/><Run/><LineBreak/><Run Text="1. Starts With - the program searches for all files that start with a given parameter"/><LineBreak/><Run Text="2. Ends With - the program searches for all files ending with a given parameter"/><LineBreak/><Run Text="3. Contains - the program searches for all files containing a given parameter"/><LineBreak/><Run Text="4. Specific - tthe program searches for all files which names are equal to the parameter"/><LineBreak/><Run/><LineBreak/><Run Text="Note: The program is meant to help you find something if you have a general idea of where it could be."/><LineBreak/><Run Text="You shouldn't search the entire disk, as the search process would take too long or crash the program."/><LineBreak/><Run Text="Try to narrow your search area if the program crashes during the search process."/><LineBreak/><Run/><LineBreak/><Run Text="The app is written by 6outtaTen (github: https://github.com/6outtaTen)"/><LineBreak/><Run Text="App version: FileFinder 2.0 (rewrite)"/></TextBlock>
+    </Grid>
+</Page>

@@ -6,7 +6,7 @@ Also it's really fast compared to the python version. Furthermore, I removed som
 
 Complete visual overhaul - it doesn't look like a piece of junk anymore (at least I hope so ;)).
 
-All the project files are provided so if you want to look at the code.. maybe improve it, you're free to, just submit a fork request.
+All the project files are provided so if you want to look at the code.. maybe improve it, you're free to.
 
 However to use the app, you only need to download and unpack the zip folder!
 
